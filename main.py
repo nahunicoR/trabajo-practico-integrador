@@ -12,18 +12,21 @@ def tiene_tres_elementos(lst):
 # ]
 
 
-lista = [50]
+lista = []
 
     
 
 while True:
+    cantidad_nodos = 0
+    grado = 0
+
     opcion = int(input('Ingrese un valor por favor: '))
     if len(lista) == 0:
         lista.append(opcion)
+        grado += 1
+
     else:
         if len(lista) <= 2:
             lista.append([opcion])
         else:
             print(lista)
-
-
