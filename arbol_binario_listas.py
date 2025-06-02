@@ -1,6 +1,8 @@
 # Aca lo que hacemos es crear el arbol, de manera que tenga la apariencia y comportamiento
 # que esperamos: 
 #        NI = Nodo Izq,              ND = Nodo Der
+
+
 #                [ valor , [] ,  [] ]
 #                   raíz , NI ,  ND
 
