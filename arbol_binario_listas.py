@@ -2,7 +2,6 @@
 # que esperamos: 
 #        NI = Nodo Izq,              ND = Nodo Der
 
-
 #                [ valor , [] ,  [] ]
 #                   raíz , NI ,  ND
 
@@ -36,7 +35,6 @@ def insertar_nodo(arbol, valor):
 
 # saque ideas desde el word que dejo la catedra para hacer el trabajo. 
 #
-
 
 def imprimir_arbol(arbol, nivel=0):
     if arbol:
