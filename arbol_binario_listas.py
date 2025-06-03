@@ -23,43 +23,70 @@ def insertar_nodo(arbol, valor):
 
     if valor < arbol[0]:
         if arbol[1]:
-            insertar_nodo(arbol[1], valor)
+            insertar_nodo(arbol[1],valor)
         else:
             arbol[1] = crear_arbol(valor)
     else:
         if arbol[2]:
-            insertar_nodo(arbol[2], valor)
+            insertar_nodo(arbol[2],valor)
         else:
             arbol[2] = crear_arbol(valor)
     return arbol
 
 # saque ideas desde el word que dejo la catedra para hacer el trabajo. 
-#
+
+def buscar_valor(arbol, valor):
+    if not arbol:
+        return False
+    
+    if valor == arbol[0]:
+        return True
+    elif valor < arbol[0]:
+        return buscar_valor(arbol[1], valor)
+    else:
+        return buscar_valor(arbol[2], valor)
+    
+
+def recorrido_inorden(arbol):
+
+    if arbol:
+        recorrido_inorden(arbol[1] )  
+        print(arbol[0], end = ' ' )    
+        recorrido_inorden(arbol[2] )  
+
+
+def recorrido_preorden(arbol):
+    if arbol:
+        print(arbol[0], end= ' ')
+        recorrido_preorden(arbol[1])
+        recorrido_preorden(arbol[2])
+
+
+def recorrido_postorden(arbol):
+
+    if arbol:
+        recorrido_postorden(arbol[1])
+        recorrido_postorden(arbol[2])
+        print(arbol[0], end= ' ')
+
+
+def contar_nodos(arbol):
+    
+    if not arbol:
+        return 0
+    
+    return 1 + contar_nodos(arbol[1]) + contar_nodos(arbol[2])
+
+
+def altura_arbol(arbol):
+
+    if not arbol:
+        return 0
+    return 1 + max(altura_arbol(arbol[1]), altura_arbol(arbol[2]))
+
 
 def imprimir_arbol(arbol, nivel=0):
     if arbol:
         imprimir_arbol(arbol[2], nivel + 1)
         print(" - " * nivel + str(arbol[0]))
         imprimir_arbol(arbol[1], nivel + 1)
-
-#--------------------------------------------------------------------------#
-
-
-#Ejemplo de uso: 
-
-# Obtendremos una lista de numeros con valores aleatorios.
-lista_numeros = [50,30,60,35,65,77,66,63,70,80,20,40,15]
-
-arbol = crear_arbol(lista_numeros[0])
-
-# Ahora insertaremos los valores al arbol recorriendo la lista 
-# esto lo hacemos recorriendo la lista desde la poscion 1, hasta el final. Ya que el primer valor fue asignado para la raíz.
-
-for num in lista_numeros[1:]:
-    insertar_nodo(arbol, num)
-
-# Finalmente, imprimos la vista del arbol con la funcion imprimir_arbol
-
-imprimir_arbol(arbol)
-
-
