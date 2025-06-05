@@ -6,7 +6,7 @@
 
 ## Video de Youtube
 
-[\[Enlace a la documentación](https://youtu.be/Ez5TY70sx7k)]
+[\[Enlace del Video](https://youtu.be/Ez5TY70sx7k)]
 
 ## Documentación
 
